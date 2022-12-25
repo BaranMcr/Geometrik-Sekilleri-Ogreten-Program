@@ -1,149 +1,139 @@
-from turtle import Screen, Pen
-def OruntuUcgen():
-    ekran = Screen()
-    uzunluk = ekran.numinput("Üçgen", "Başlangıç kenar uzunluğunu girin:", default=40, minval=10, maxval=70)
-    arttırmak = ekran.numinput("üçgneler", "Boyut artışını girin:", default=30, minval=10, maxval=50)
-    Ucgenler = int(ekran.numinput("Ucgenler", "İstediğiniz üçgen sayısını girin:", default=3, minval=1, maxval=5))
-    pen = Pen()
+import tkinter as tk
+from turtle import *
+pencere = tk.Tk()
+pencere.geometry("700x600")
+def page2():  # 0-6 yaş menü penceresi
+    pencere2 = tk.Tk()
+    pencere2.geometry('700x600')
+    pencere2.title("6 Yaş ve Üstü Grubu")
 
-    for ucgen in range(Ucgenler):
-        for _ in range(3):
-            pen.forward(uzunluk + ucgen * arttırmak)
-            pen.left(120)
+    dugme4 = tk.Button(pencere2, text='Çıkış', command=pencere2.destroy)
+    dugme4.pack(side=tk.BOTTOM, pady=5)
 
-    ekran.exitonclick()
+    dugmekare = tk.Button(pencere2, text='Kare', command=kare)
+    dugmekare.place(x=10, y=500)
 
-def OruntuKare():
-        ekran = Screen()
-        uzunluk = ekran.numinput("Kare", "Başlangıç kenar uzunluğunu girin:", default=40, minval=10, maxval=70)
-        arttırmak = ekran.numinput("Kareler", "Boyut artışını girin:", default=30, minval=10, maxval=50)
-        sekiller = int(ekran.numinput("Kareler", "İstediğiniz üçgen sayısını girin:", default=3, minval=1, maxval=5))
-        pen = Pen()
+    dugmedikdortgen = tk.Button(pencere2, text='Dikdörtgen', command=dikdortgen)
+    dugmedikdortgen.place(x=50, y=500)
 
-        for sekil in range(sekiller):
-            for _ in range(4):
-                pen.forward(uzunluk + sekil * arttırmak)
-                pen.left(90)
+    dugmeucgen = tk.Button(pencere2, text='Üçgen', command=ucgen)
+    dugmeucgen.place(x=125, y=500)
 
-        ekran.exitonclick()
+    dugmebesgen = tk.Button(pencere2, text='Beşgen', command=besgen)
+    dugmebesgen.place(x=175, y=500)
 
+    dugmealtigen = tk.Button(pencere2, text='Altıgen', command=altigen)
+    dugmealtigen.place(x=230, y=500)
 
-def OruntuBesgen():
-    ekran = Screen()
-    uzunluk = ekran.numinput("Besgen", "Başlangıç kenar uzunluğunu girin:", default=40, minval=10, maxval=70)
-    arttırmak = ekran.numinput("Besgen", "Boyut artışını girin:", default=30, minval=10, maxval=50)
-    sekiller = int(ekran.numinput("Besgenler", "İstediğiniz üçgen sayısını girin:", default=3, minval=1, maxval=5))
-    pen = Pen()
+    dugmeyedigen = tk.Button(pencere2, text='Yedigen', command=yedigen)
+    dugmeyedigen.place(x=285, y=500)
 
-    for sekil in range(sekiller):
-        for _ in range(5):
-            pen.forward(uzunluk + sekil * arttırmak)
-            pen.left(72)
+    dugmesekizgen = tk.Button(pencere2, text='Sekizgen', command=sekizgen)
+    dugmesekizgen.place(x=343, y=500)
 
-    ekran.exitonclick()
+    dugmedokuzgen = tk.Button(pencere2, text='Dokuzgen', command=dokuzgen)
+    dugmedokuzgen.place(x=405, y=500)
 
-def OruntuAltigen():
-    ekran = Screen()
-    uzunluk = ekran.numinput("Altigen", "Başlangıç kenar uzunluğunu girin:", default=40, minval=10, maxval=70)
-    arttırmak = ekran.numinput("Altigenler", "Boyut artışını girin:", default=30, minval=10, maxval=50)
-    sekiller = int(ekran.numinput("Altigenler", "İstediğiniz üçgen sayısını girin:", default=3, minval=1, maxval=5))
-    pen = Pen()
+    dugmeongen = tk.Button(pencere2, text='Ongen', command=ongen)
+    dugmeongen.place(x=475, y=500)
 
-    for sekil in range(sekiller):
-        for _ in range(6):
-            pen.forward(uzunluk + sekil * arttırmak)
-            pen.left(60)
+    dugmeonbirgen = tk.Button(pencere2, text='Onbirgen', command=onbirgen)
+    dugmeonbirgen.place(x=528, y=500)
 
-        ekran.exitonclick()
+    dugmeonikigen = tk.Button(pencere2, text='Onikigen', command=onikigen)
+    dugmeonikigen.place(x=593, y=500)
+
+    dugmedaire = tk.Button(pencere2, text='Daire', command=daire)
+    dugmedaire.place(x=655, y=500)
+    pencere.destroy()
+def page3():  # 6 yaş ve üzeri menü penceresi
+    pencere3 = tk.Tk()
+    pencere3.geometry('800x600')
+    pencere3.title("6 Yaş ve Üstü Grubu")
+    dugme5 = tk.Button(pencere3, text='Çıkış', command=pencere3.destroy)
+    dugme5.pack(side=tk.BOTTOM, pady=5)
+    pencere.destroy()
 
 
-def OruntuYedigen():
-    ekran = Screen()
-    uzunluk = ekran.numinput("Yedigen", "Başlangıç kenar uzunluğunu girin:", default=40, minval=10, maxval=70)
-    arttırmak = ekran.numinput("Yedigen", "Boyut artışını girin:", default=30, minval=10, maxval=50)
-    sekiller = int(ekran.numinput("Yedigenler", "İstediğiniz üçgen sayısını girin:", default=3, minval=1, maxval=5))
-    pen = Pen()
+etiket = tk.Label(text = 'Hoşgeldiniz')
+etiket.pack()
 
-    for sekil in range(sekiller):
-        for _ in range(7):
-            pen.forward(uzunluk + sekil * arttırmak)
-            pen.left(51.42857142)
+dugme = tk.Button(text='0-6 yaş', command=page2)
+dugme.pack(padx=5, side=tk.LEFT)
 
-    ekran.exitonclick()
+dugme2 = tk.Button(text='6 yaş ve üstü', command=page3)
+dugme2.pack(padx=5, side=tk.RIGHT)
 
-def OruntuSekizgen():
-    ekran = Screen()
-    uzunluk = ekran.numinput("Sekizgen", "Başlangıç kenar uzunluğunu girin:", default=40, minval=10, maxval=70)
-    arttırmak = ekran.numinput("Sekizgen", "Boyut artışını girin:", default=30, minval=10, maxval=50)
-    sekiller = int(ekran.numinput("Sekizgenler", "İstediğiniz üçgen sayısını girin:", default=3, minval=1, maxval=5))
-    pen = Pen()
+dugme3 = tk.Button(text='Çıkış', command=pencere.destroy)
+dugme3.pack(side=tk.BOTTOM, pady=5)
 
-    for sekil in range(sekiller):
-        for _ in range(8):
-            pen.forward(uzunluk + sekil * arttırmak)
-            pen.left(45)
+pencere.title("Öğretici Çizen Robot")
 
-    ekran.exitonclick()
+def kare():
+    for i in range(4):
+        forward(100)
+        left(90)
 
+def dikdortgen():
+    for i in range(2):
+        forward(150)
+        left(90)
+        forward(75)
+        left(90)
 
-def OruntuDokuzgen():
-    ekran = Screen()
-    uzunluk = ekran.numinput("Dokuzgen", "Başlangıç kenar uzunluğunu girin:", default=40, minval=10, maxval=70)
-    arttırmak = ekran.numinput("Dokuzgen", "Boyut artışını girin:", default=30, minval=10, maxval=50)
-    sekiller = int(ekran.numinput("Dokuzgenler", "İstediğiniz üçgen sayısını girin:", default=3, minval=1, maxval=5))
-    pen = Pen()
+def ucgen():
+    for i in range(3):
+        left(120)
+        forward(150)
 
-    for sekil in range(sekiller):
-        for _ in range(9):
-            pen.forward(uzunluk + sekil * arttırmak)
-            pen.left(40)
+def besgen():
+    for i in range(5):
+        left(72)
+        forward(150)
 
-    ekran.exitonclick()
+def altigen():
+    for i in range(6):
+        left(60)
+        forward(150)
 
-def OruntuOngen():
-    ekran = Screen()
-    uzunluk = ekran.numinput("Ongen", "Başlangıç kenar uzunluğunu girin:", default=40, minval=10, maxval=70)
-    arttırmak = ekran.numinput("Ongen", "Boyut artışını girin:", default=30, minval=10, maxval=50)
-    sekiller = int(ekran.numinput("Ongenler", "İstediğiniz üçgen sayısını girin:", default=3, minval=1, maxval=5))
-    pen = Pen()
+def yedigen():
+    for i in range(7):
+        left(51.4285714)
+        forward(150)
 
-    for sekil in range(sekiller):
-        for _ in range(10):
-            pen.forward(uzunluk + sekil * arttırmak)
-            pen.left(36)
+def dokuzgen():
+    for i in range(9):
+        left(40)
+        forward(150)
 
-    ekran.exitonclick()
+def ongen():
+    for i in range(10):
+        left(60)
+        forward(150)
 
-def OruntuOnbirgen():
-    ekran = Screen()
-    uzunluk = ekran.numinput("Onbirgen", "Başlangıç kenar uzunluğunu girin:", default=40, minval=10, maxval=70)
-    arttırmak = ekran.numinput("Onbirgen", "Boyut artışını girin:", default=30, minval=10, maxval=50)
-    sekiller = int(ekran.numinput("Onbirgenler", "İstediğiniz üçgen sayısını girin:", default=3, minval=1, maxval=5))
-    pen = Pen()
+def onbirgen():
+    for i in range(11):
+        left(32.727272)
+        forward(150)
 
-    for sekil in range(sekiller):
-        for _ in range(11):
-            pen.forward(uzunluk + sekil * arttırmak)
-            pen.left(32.72727272)
+def onikigen():
+    for i in range(12):
+        left(30)
+        forward(150)
 
-    ekran.exitonclick()
-
-def OruntuOnikigen():
-    ekran = Screen()
-    uzunluk = ekran.numinput("Onikigen", "Başlangıç kenar uzunluğunu girin:", default=40, minval=10, maxval=70)
-    arttırmak = ekran.numinput("Onikigen", "Boyut artışını girin:", default=30, minval=10, maxval=50)
-    sekiller = int(ekran.numinput("Onikigenler", "İstediğiniz üçgen sayısını girin:", default=3, minval=1, maxval=5))
-    pen = Pen()
-
-    for sekil in range(sekiller):
-        for _ in range(12):
-            pen.forward(uzunluk + sekil * arttırmak)
-            pen.left(30)
-
-    ekran.exitonclick()
+def daire():
+    penup()
+    right(90)
+    forward(100)
+    left(90)
+    pendown()
+    circle(100)
+    penup()
+    setposition(0, 0)
+def sekizgen():
+        for i in range(8):
+            forward(50)
+            left(45)
 
 
-
-
-
-
+pencere.mainloop()
