@@ -1,11 +1,22 @@
 import tkinter as tk
+import turtle
 from turtle import *
+
 pencere = tk.Tk()
 pencere.geometry("700x600")
+pencere.title("Öğretici Çizen Robot")
+etiket = tk.Label(text='Hoşgeldiniz', font=12)
+etiket.pack(pady=10)
+
 def page2():  # 0-6 yaş menü penceresi
     pencere2 = tk.Tk()
     pencere2.geometry('700x600')
     pencere2.title("6 Yaş ve Üstü Grubu")
+
+    # canvas = tk.Canvas(pencere2, width=600, height=400)
+    # canvas.pack(side=tk.TOP)
+    # t = turtle.RawTurtle(canvas)
+
 
     dugme4 = tk.Button(pencere2, text='Çıkış', command=pencere2.destroy)
     dugme4.pack(side=tk.BOTTOM, pady=5)
@@ -45,29 +56,55 @@ def page2():  # 0-6 yaş menü penceresi
 
     dugmedaire = tk.Button(pencere2, text='Daire', command=daire)
     dugmedaire.place(x=655, y=500)
+
+
     pencere.destroy()
-def page3():  # 6 yaş ve üzeri menü penceresi
+
+
+# 6 yaş ve üzeri menü penceresi
+def page3():
     pencere3 = tk.Tk()
-    pencere3.geometry('800x600')
+    pencere3.geometry('700x600')
     pencere3.title("6 Yaş ve Üstü Grubu")
+
     dugme5 = tk.Button(pencere3, text='Çıkış', command=pencere3.destroy)
     dugme5.pack(side=tk.BOTTOM, pady=5)
+
+    dugmecizdir = tk.Button(pencere3, text='Çizdir')
+    dugmecizdir.place(x=50, y=560)
+
+    label1 = tk.Label(pencere3, text='Kenar Sayısını giriniz:')
+    label1.place(x=10, y=470)
+
+    entry1 = tk.Entry(pencere3)
+    entry1.place(x=125, y=470)
+
+    label2 = tk.Label(pencere3, text='Açı Değerini Giriniz:')
+    label2.place(x=10, y=500)
+
+    entry2 = tk.Entry(pencere3)
+    entry2.place(x=125, y=500)
+
+    label3 = tk.Label(pencere3, text='Köşe Sayısını Giriniz:')
+    label3.place(x=10, y=530)
+
+    entry3 = tk.Entry(pencere3)
+    entry3.place(x=125, y=530)
+
+
+
     pencere.destroy()
 
 
-etiket = tk.Label(text = 'Hoşgeldiniz')
-etiket.pack()
-
-dugme = tk.Button(text='0-6 yaş', command=page2)
+dugme = tk.Button(text='0-6 yaş', font=12, command=page2)
 dugme.pack(padx=5, side=tk.LEFT)
 
-dugme2 = tk.Button(text='6 yaş ve üstü', command=page3)
+dugme2 = tk.Button(text='6 yaş ve üstü', font=12, command=page3)
 dugme2.pack(padx=5, side=tk.RIGHT)
 
-dugme3 = tk.Button(text='Çıkış', command=pencere.destroy)
+dugme3 = tk.Button(text='Çıkış', font=12, command=pencere.destroy)
 dugme3.pack(side=tk.BOTTOM, pady=5)
 
-pencere.title("Öğretici Çizen Robot")
 
 def kare():
     for i in range(4):
@@ -134,6 +171,5 @@ def sekizgen():
         for i in range(8):
             forward(50)
             left(45)
-
 
 pencere.mainloop()
